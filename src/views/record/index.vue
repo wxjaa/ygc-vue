@@ -6,16 +6,19 @@
 		</H>
 		<div class="content">
 			<div class="row no-gutter bg-white">
-				<type-item :active="idx==index?true:false" :idx="index" v-for="(item,index) in type" :key="item.id" :url="item.url" :text="item.text"
-							:src="idx==index?item.active_img:item.img"></type-item>
+				<div @click="idx=index" class="vux-1px-b col-25" v-for="(item,index) in type">
+				<type-item :active="idx==index?true:false" :idx="index"  :key="item.id" :url="item.url" :text="item.text"
+							:src="idx==index?item.active_img:item.img"></type-item></div>
 
 			</div>
 		</div>
+		<fixed-btn url="#" text="添加"></fixed-btn>
 	</div>
 </template>
 <script type="text/ecmascript-6">
 	import H from '@/components/header.vue';
 	import typeItem from '@/components/typeItem.vue'
+	import fixedBtn from '@/components/fixedBtn.vue'
 	export default{
 		name: 'record',
 		data(){
@@ -55,7 +58,8 @@
 		},
 		components: {
 			H,
-			typeItem
+			typeItem,
+			fixedBtn
 		},
 
 	}

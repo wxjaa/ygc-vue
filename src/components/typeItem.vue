@@ -1,5 +1,5 @@
 <template>
-	<div @click="changeType" class="grid-item vux-1px-b col-25 " :class="active?'active':''" :to="url">
+	<div @click="changeType" class="grid-item  w100" :class="active?'active':''" :to="url">
 		<img :src="src">
 		<span class="grid-center">{{text}}</span>
 	</div>
