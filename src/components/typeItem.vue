@@ -46,7 +46,7 @@
 		},
 		methods:{
 			changeType: function () {
-				console.log(this)
+
 			}
 		},
 	}

@@ -6,7 +6,7 @@
 <script type="text/ecmascript-6">
 	export default{
 		name:'fixedBtn',
-		data(){},
+		data(){return {}},
 		props:{
 			url:String,
 			text:{
