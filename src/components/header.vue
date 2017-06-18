@@ -12,7 +12,7 @@
 		props: {
 			showBack: {
 				type: Boolean,
-				default: false
+				default: true
 			},
 			title: String
 		},

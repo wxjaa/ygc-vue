@@ -2,10 +2,10 @@
 	<div>
 		<header class="header bg-header">办公</header>
 		<div class="title1 vux-1px-t bg-white">
-			通用办公
+			通用办公{{aaa}}
 		</div>
-		<div class="vux-1px-t row no-gutter bg-white">
-			<model-item v-for="item in general" :key="item.id" :url="item.url" :text="item.text" :src="item.img"></model-item>
+		<div @click="aaa=2" class="vux-1px-t row no-gutter bg-white">
+			<model-item  v-for="(item,index) in general" :key="item.id" :url="item.url" :text="item.text" :src="item.img"></model-item>
 		</div>
 		<div class="title1 vux-1px-t bg-white">
 			专业管理
@@ -38,6 +38,7 @@
 		name: "index",
 		data(){
 			return {
+				aaa:1,
 				general: [
 					{
 						text: "审批",

@@ -460,7 +460,8 @@ select {
     bottom: 0;
     content: "\e613";
     color: #0894ec;
-    padding: 0.1rem 1rem
+    padding-right:.5rem;
+	transform: translateY(25%);
 }
 
 .rightIcon > select,

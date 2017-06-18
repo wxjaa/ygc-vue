@@ -1,12 +1,12 @@
 <template>
 	<div class="page page-current">
 		<H title="行政备案" :showBack=true>
-			<router-link slot="right" to="setting.html"
+			<router-link slot="right" to="record/recordSetting"
 						 class="icon color-gray external iconfont icon-set pull-right"></router-link>
 		</H>
 		<div class="content">
 			<div class="row no-gutter bg-white">
-				<div @click="idx=index" class="vux-1px-b col-25" v-for="(item,index) in type">
+				<div @click="changeType(index)" class="vux-1px-b col-25" v-for="(item,index) in type">
 					<type-item :active="idx==index?true:false" :idx="index" :key="item.id" :url="item.url"
 							   :text="item.text"
 							   :src="idx==index?item.active_img:item.img"></type-item>
@@ -26,6 +26,7 @@
 	import typeItem from '@/components/typeItem.vue'
 	import fixedBtn from '@/components/fixedBtn.vue'
 	import listItem from '@/views/record/listItem.vue'
+	import {mapState,mapAction} from "vuex"
 	export default{
 		name: 'record',
 		data(){
@@ -55,30 +56,29 @@
 					type: '4',
 					url: '#'
 				}],
-				idx: 0,
 				dataList: [{
-					id:'1',
+					id: '1',
 					theme: "UI转交关羽",
 					department: '技术部',
 					date: '2017-05-23',
 					time: '16:00',
 					status: 1
 				}, {
-					id:'2',
+					id: '2',
 					theme: "UI转交关羽",
 					department: '技术部',
 					date: '2017-05-23',
 					time: '16:00',
 					status: 2
 				}, {
-					id:'3',
+					id: '3',
 					theme: "UI转交关羽",
 					department: '技术部',
 					date: '2017-05-23',
 					time: '16:00',
 					status: 3
 				}, {
-					id:'4',
+					id: '4',
 					theme: "UI转交关羽",
 					department: '技术部',
 					date: '2017-05-23',
@@ -88,8 +88,8 @@
 			}
 		},
 		methods: {
-			changeType: function () {
-				console.log(this)
+			changeType: function (type) {
+				this.$store.dispatch('changeRecordType',type)
 			}
 		},
 		components: {
@@ -98,6 +98,8 @@
 			fixedBtn,
 			listItem
 		},
-
+		computed: mapState({
+			idx: state=>state.recordType
+		})
 	}
 </script>

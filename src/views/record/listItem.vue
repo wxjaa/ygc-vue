@@ -1,6 +1,6 @@
 <template>
 	<li  class="p-tb p-lr bg-white vux-1px-b">
-	<router-link to="workTransferDetail" class="color-black">
+	<router-link to="record/workTransferDetail" class="color-black">
 		<div class="flex ub-ver">
 			<div class="flex">
 				<div class="ub-f1 "><span class="fontC">主题：</span>{{theme}}</div>

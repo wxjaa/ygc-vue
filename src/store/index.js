@@ -6,12 +6,7 @@ import actions from './actions'
 Vue.use(Vuex)
 
 const state = {
-  isLoading: false,
-  direction: 'forward',
-  isSave: false,
-  dataStore: [],
-  title: '',
-  TableComponentsTotal: 0
+ recordType:0,
 }
 export default new Vuex.Store({
   state,
