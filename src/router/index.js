@@ -5,6 +5,8 @@ const index = resolve => require(['@/views/index.vue'], resolve)
 const record = resolve => require(['@/views/record/index.vue'], resolve)
 const workTransferDetail = resolve => require(['@/views/record/workTransferDetail.vue'], resolve)
 const recordSetting = resolve => require(['@/views/record/setting.vue'], resolve)
+const setManager = resolve => require(['@/views/record/setManager.vue'], resolve)
+const setOperator = resolve => require(['@/views/record/setOperator.vue'], resolve)
 Vue.use(Router)
 
 export default new Router({
@@ -28,6 +30,14 @@ export default new Router({
 			path: "/record/recordSetting",
 			name: 'setting',
 			component: recordSetting
+		},{
+			path: "/record/setManager",
+			name: 'setManager',
+			component: setManager
+		},{
+			path: "/record/setOperator",
+			name: 'setOperator',
+			component: setOperator
 		}
 	]
 })
